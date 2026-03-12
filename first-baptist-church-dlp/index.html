@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Baptist Church DLP - RCF System Design</title>
+    <style>
+        :root {
+            --rcf-blue: #0055A5; /* Adjust to exact RCF blue if needed */
+            --bg-dark: #121212;
+            --panel-bg: #1e1e1e;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--rcf-blue);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .section {
+            background-color: var(--panel-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Responsive 16:9 iframe containers */
+        .video-container, .slides-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .video-container iframe, .slides-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .download-card {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .download-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--rcf-blue);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--rcf-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: #0066c8;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">RCF<span>USA</span></div>
+            <div>System Design Division</div>
+        </header>
+
+        <h1>First Baptist Church DLP</h1>
+        <p class="subtitle">Acoustic Prediction & System Design Proposal</p>
+
+        <!-- Video Walkthrough Section -->
+        <div class="section">
+            <h2>🎥 System Design Walkthrough</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">A guided overview of the system decisions, SPL targets, and acoustic mapping.</p>
+            <div class="video-container">
+                <iframe src="https://share.descript.com/embed/hMYTzMy9gmf" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Slide Deck Section -->
+        <div class="section">
+            <h2>📊 Presentation Deck</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Review the full system proposal, Bill of Materials, and design philosophy.</p>
+            <div class="slides-container">
+                <div style="padding: 2rem; text-align: center; color: #9ca3af; background: #1a1a1a; height: 100%; display: flex; align-items: center; justify-content: center;">No presentation deck attached to this phase.</div>
+            </div>
+        </div>
+
+        <!-- Documentation & Downloads -->
+        <div class="section">
+            <h2>📄 Engineering Documents & SPL Maps</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Download the high-resolution EASE 5 acoustic prediction maps and supporting PDFs.</p>
+            <div class="download-grid">
+                
+            <div class="download-card">
+                <h3 style="font-size: 1rem; margin-bottom: 0.5rem; word-break: break-all;">Front View_First Baptist Church DLP_v1.png</h3>
+                <a href="./Front%20View_First%20Baptist%20Church%20DLP_v1.png" target="_blank" class="download-btn">Open File</a>
+            </div>
+            <div class="download-card">
+                <h3 style="font-size: 1rem; margin-bottom: 0.5rem; word-break: break-all;">Iso View_First Baptist Church DLP_v1.png</h3>
+                <a href="./Iso%20View_First%20Baptist%20Church%20DLP_v1.png" target="_blank" class="download-btn">Open File</a>
+            </div>
+            <div class="download-card">
+                <h3 style="font-size: 1rem; margin-bottom: 0.5rem; word-break: break-all;">Side View_First Baptist Church DLP_v1.png</h3>
+                <a href="./Side%20View_First%20Baptist%20Church%20DLP_v1.png" target="_blank" class="download-btn">Open File</a>
+            </div>
+            <div class="download-card">
+                <h3 style="font-size: 1rem; margin-bottom: 0.5rem; word-break: break-all;">Top View_First Baptist Church DLP_v1.png</h3>
+                <a href="./Top%20View_First%20Baptist%20Church%20DLP_v1.png" target="_blank" class="download-btn">Open File</a>
+            </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Prepared by Michael Curtis | RCF System Design</p>
+            <p>&copy; 2026 RCF USA. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
